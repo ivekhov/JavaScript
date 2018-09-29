@@ -109,10 +109,11 @@ alert("Результат сравнения null и 0 : " + (null == 0));
 function power(val, pow){
 	if (pow == 0) {
 		return 1;
-	} else if(pow > 1) {
-		val *= power(val, pow - 1);
-	}
-	return val;
+	} else if(pow > 0) {
+		return val * power(val, pow - 1);
+	} else if(pow < 0) {
+		return 1 / (val * power(val, -pow - 1));
+	} 
 }
 
 
